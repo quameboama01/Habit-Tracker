@@ -7,3 +7,4 @@ if stat_code == 200:
     print("Yaay!, We have connected to the Server")
 else:
     print("Connection lost, Please try again later.")
+print("\n The End")
