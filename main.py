@@ -32,9 +32,13 @@ date = now.strftime("%Y%m%d")
 pixel_endpoint = f"{graph_endpoint}/{GRAPH_ID}"
 pixel_details = {
     "date": date,
-    "quantity": input("How many Kilometers did you Cycle today? ")
+    #"quantity": input("How many Kilometers did you Cycle today? ")
+}
+update_endpoint = f"{pixel_endpoint}/{date}"
+update_data = {
+    "quantity": "40.00"
 }
 
-response = requests.post(url=pixel_endpoint, json=pixel_details, headers=headers)
+response = requests.delete(url=update_endpoint, headers=headers)
 response.raise_for_status
 print(response.text)
