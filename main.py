@@ -39,6 +39,6 @@ update_data = {
     "quantity": "40.00"
 }
 
-response = requests.delete(url=update_endpoint, headers=headers)
+response = requests.put(url=update_endpoint, json=update_data, headers=headers)
 response.raise_for_status
 print(response.text)
